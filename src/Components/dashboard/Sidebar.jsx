@@ -38,7 +38,7 @@ const Sidebar = () => {
       </Nav>
 
       <div className="p-3 mt-auto">
-        <Nav.Link as={NavLink} to="/login" className="text-center border border-secondary rounded py-2">
+        <Nav.Link as={NavLink} to="/inicio" className="text-center border border-secondary rounded py-2">
           Salir
         </Nav.Link>
       </div>

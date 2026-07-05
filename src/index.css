@@ -11,3 +11,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.form-input-dark::placeholder {
+  color: #c8c8c8;
+  opacity: 1;
+}
+
+.form-input-dark::-webkit-input-placeholder {
+  color: #c8c8c8;
+  opacity: 1;
+}
+
+.form-input-dark::-moz-placeholder {
+  color: #c8c8c8;
+  opacity: 1;
+}
+
+.form-input-dark option[value=''] {
+  color: #c8c8c8;
+}
+
+.form-select.form-input-dark:invalid {
+  color: #c8c8c8;
+}
+
+.form-select.form-input-dark option {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.reservas-tabla {
+  width: 100%;
+}
+
+.reservas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservas-table thead th {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.reservas-table tbody td {
+  border: none;
+  padding: 16px;
+  color: #111111;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.reservas-table tbody tr:nth-child(odd) td {
+  background-color: #b5b5b5;
+}
+
+.reservas-table tbody tr:nth-child(even) td {
+  background-color: #9a9a9a;
+}

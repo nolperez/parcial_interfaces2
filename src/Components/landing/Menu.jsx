@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Menu() {
     return (
@@ -33,8 +34,15 @@ export default function Menu() {
                             Servido con sal de maras.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 79.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 79.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -46,8 +54,15 @@ export default function Menu() {
                             toda su suavidad y jugosidad.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 85.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 85.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -59,8 +74,15 @@ export default function Menu() {
                             toda su suavidad y jugosidad.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 75.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 75.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -72,8 +94,15 @@ export default function Menu() {
                             de la casa.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 72.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 72.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -85,8 +114,15 @@ export default function Menu() {
                             artesanal de la casa.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 64.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 64.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -98,8 +134,15 @@ export default function Menu() {
                             tierno y muy jugoso.
                         </p>
                     </div>
-                    <div className="col-3 text-end border-start border-secondary">
-                        <h4 className="mb-0">S/ 48.00</h4>
+                    <div className="col-3 d-flex justify-content-between align-items-center border-start border-secondary">
+                        <div className="container">
+                            <h4 className="mb-0">S/ 48.00</h4>
+                        </div>
+                        <div className="container">
+                            <Link to="/reservas" className="btn btn-light">
+                                <span>Reservar</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -116,9 +159,9 @@ export default function Menu() {
                                     Dos palitos de corazón de res seleccionados, marinados en ají panca y especias.
                                 </p>
                             </div>
-                            <div className="col-4 text-end">
-                                <h4 className="mb-0">S/ 28.00</h4>
-                            </div>
+                                <div className="col-4 text-end">
+                                    <h4 className="mb-0">S/ 28.00</h4>
+                                </div>
                         </div>
                     </div>
 

@@ -36,10 +36,9 @@ export default function Navegacion() {
                 to="/"
                 end
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-outline-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >
@@ -51,10 +50,9 @@ export default function Navegacion() {
               <NavLink
                 to="/menu"
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-outline-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >
@@ -66,10 +64,9 @@ export default function Navegacion() {
               <NavLink
                 to="/bebidas"
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-outline-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >
@@ -79,12 +76,25 @@ export default function Navegacion() {
 
             <li className="nav-item">
               <NavLink
+                to="/reservas"
+                className={({ isActive }) =>
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
+                  } rounded-3 px-4 py-2 fw-bold`
+                }
+              >
+                RESERVAS
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink
                 to="/nosotros"
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-outline-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >
@@ -92,14 +102,15 @@ export default function Navegacion() {
               </NavLink>
             </li>
 
+
+
             <li className="nav-item">
               <NavLink
                 to="/contacto"
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-outline-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-outline-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >
@@ -107,14 +118,15 @@ export default function Navegacion() {
               </NavLink>
             </li>
 
+
+
             <li className="nav-item">
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
-                  `btn ${
-                    isActive
-                      ? "btn-danger"
-                      : "btn-light"
+                  `btn ${isActive
+                    ? "btn-danger"
+                    : "btn-light"
                   } rounded-3 px-4 py-2 fw-bold`
                 }
               >

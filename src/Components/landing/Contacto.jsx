@@ -6,7 +6,7 @@ export default function Contacto() {
             <div className="row mb-4 g-0">
                 <div className="col-12">
                     <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqQqJSNxsEYbqhKQD0ztV1x6ObuYSoaOXwD7alR7YrCw&s=10"
+                        src="https://thumbs.dreamstime.com/b/carnes-la-parrilla-en-barbacoa-vista-panor%C3%A1mica-de-varios-cortes-carne-una-sobre-llamas-vibrantes-parece-estar-bien-marinada-y-385351371.jpg"
                         alt="Parrilla Gourmet Fire Pit"
                         className="img-fluid w-100"
                         style={{ display: 'block', height: '300px', objectFit: 'cover' }}
@@ -23,86 +23,97 @@ export default function Contacto() {
                             Contactanos
                         </h2>
 
-                        <form>
-                            <div className="mb-3">
-                                <label htmlFor="nombre" className="form-label">
-                                    Nombre
-                                </label>
-                                <input
-                                    type="text"
-                                    className="form-control bg-secondary text-white border-0"
-                                    id="nombre"
-                                    placeholder="Ingrese el nombre..."
-                                    required
-                                />
-                            </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="telefono" className="form-label">
-                                    Teléfono
-                                </label>
-                                <input
-                                    type="text"
-                                    className="form-control bg-secondary text-white border-0"
-                                    id="telefono"
-                                    placeholder="Ejml. 958788540"
-                                    required
-                                />
-                            </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="descripcion" className="form-label">
-                                    Descripción
-                                </label>
-                                <textarea
-                                    className="form-control bg-secondary text-white border-0"
-                                    id="descripcion"
-                                    rows="5"
-                                    placeholder="Opcional"
-                                ></textarea>
-                            </div>
-
-                            <div className="row g-3">
-                                <div className="col-6">
-                                    <button type="reset" className="btn btn-secondary w-100">
-                                        Cancelar
-                                    </button>
+                        <div
+                            className="rounded-4 p-4"
+                            style={{ backgroundColor: '#2A2A2A' }}
+                        >
+                            <form>
+                                <div className="mb-3">
+                                    <label htmlFor="nombre" className="form-label text-secondary">
+                                        Nombre
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control border-0 text-white rounded-3 form-input-dark"
+                                        id="nombre"
+                                        placeholder="Ingrese el nombre..."
+                                        style={{ backgroundColor: '#333333' }}
+                                        required
+                                    />
                                 </div>
 
-                                <div className="col-6">
-                                    <button type="submit" className="btn btn-secondary w-100">
-                                        Crear
-                                    </button>
+                                <div className="mb-3">
+                                    <label htmlFor="precio" className="form-label text-secondary">
+                                        Precio
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control border-0 text-white rounded-3 form-input-dark"
+                                        id="precio"
+                                        placeholder="Ejm. 25.00"
+                                        style={{ backgroundColor: '#333333' }}
+                                        required
+                                    />
                                 </div>
-                            </div>
-                        </form>
 
-                        <div className="mt-5">
-                            <h3 className="text-uppercase fw-bold mb-3">
-                                Telefono
+                                <div className="mb-4">
+                                    <label htmlFor="descripcion" className="form-label text-secondary">
+                                        Descripción
+                                    </label>
+                                    <textarea
+                                        className="form-control border-0 text-white rounded-3 form-input-dark"
+                                        id="descripcion"
+                                        rows="5"
+                                        placeholder="Opcional"
+                                        style={{ backgroundColor: '#333333' }}
+                                    ></textarea>
+                                </div>
+
+                                <div className="row g-3">
+                                    <div className="col-6">
+                                        <button
+                                            type="reset"
+                                            className="btn w-100 text-white border-0 rounded-3"
+                                            style={{ backgroundColor: '#5C2C2C' }}
+                                        >
+                                            Cancelar
+                                        </button>
+                                    </div>
+
+                                    <div className="col-6">
+                                        <button
+                                            type="submit"
+                                            className="btn w-100 text-white border-0 rounded-3"
+                                            style={{ backgroundColor: '#1C3C1C' }}
+                                        >
+                                            Crear
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div className="mt-4">
+                            <h3 className="text-uppercase fw-bold mb-0">
+                                Telefono: <span className="fw-bold">+51958788541</span>
                             </h3>
-                            <p className="fw-bold mb-0">
-                                +51958788541
-                            </p>
                         </div>
                     </div>
 
                     <div className="col-12 col-md-7">
-                        <div className="pt-md-5 mt-md-5">
-                            <h2 className="text-uppercase fw-bold mb-2">
-                                Estamos ubicados en
-                            </h2>
+                        <h2 className="text-uppercase fw-bold mb-2">
+                            Estamos ubicados en
+                        </h2>
 
-                            <p className="mb-3">
-                                Av. Carlos Izaguirre 813, Los Olivos 15301
-                            </p>
+                        <p className="text-secondary mb-4">
+                            Av. Carlos Izaguirre 813, Los Olivos 15301
+                        </p>
 
-                            <img
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwC7_aCvkowAsUZAhuyRlpaQOf9w1fPpbv-ypwiK2LI1rHFuxTuIpCFidk&s=10"
-                                alt="Ubicación Gourmet Fire Pit"
-                                className="img-fluid w-100"
-                            />
-                        </div>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwC7_aCvkowAsUZAhuyRlpaQOf9w1fPpbv-ypwiK2LI1rHFuxTuIpCFidk&s=10"
+                            alt="Ubicación Gourmet Fire Pit"
+                            className="img-fluid w-100 rounded-4"
+                        />
                     </div>
 
                 </div>

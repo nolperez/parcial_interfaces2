@@ -46,6 +46,8 @@ export default function Nosotros() {
 
                 <div className="row g-4 mt-5">
 
+                    <h3>Nuestros Pilares</h3>
+
                     <div className="col-12 col-md-4">
                         <div className="bg-dark rounded-5 text-center p-4 h-100">
                             <div className="text-danger fs-1">
@@ -56,7 +58,7 @@ export default function Nosotros() {
                                 Cortes Selectos
                             </h5>
 
-                            <p className="text-secondary mb-0">
+                            <p className="text-white mb-0">
                                 Carnes de primera calidad maduradas a la perfección.
                             </p>
                         </div>
@@ -72,7 +74,7 @@ export default function Nosotros() {
                                 Auténtica Parrilla
                             </h5>
 
-                            <p className="text-secondary mb-0">
+                            <p className="text-white mb-0">
                                 Técnica ancestral con leña seleccionada y carbón.
                             </p>
                         </div>
@@ -88,7 +90,7 @@ export default function Nosotros() {
                                 Garantía Gourmet
                             </h5>
 
-                            <p className="text-secondary mb-0">
+                            <p className="text-white mb-0">
                                 Alta cocina con pasión en cada detalle culinario.
                             </p>
                         </div>

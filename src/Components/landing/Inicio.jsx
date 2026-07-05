@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../logo.png';
 import carne from '../../carne.png';
 
@@ -73,10 +74,22 @@ export default function Inicio() {
             </section>
 
             {/* Features Section */}
-            <section className=" py-2 bg-dark">
-                    <h2 className="text-center fw-bold" style={{ color: '#d4580e' }}>PROMOCIONES</h2>
+            <section className="py-4 bg-dark">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-center gap-2">
+                            <h2 className="fw-bold text-white mb-0">PROMOCIONES</h2>
+                            {/* boton de reservar con icono de calendar */}
+                            <Link to="/reservas" className="btn btn-light d-flex align-items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                                <span>Reservar ahora</span>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </section>
-
             {/* Promotions Section */}
             <section className="py-5">
                 <div className="container">
@@ -103,6 +116,14 @@ export default function Inicio() {
                                     <p className="small fw-bold text-white">AHORA A/ $95.90</p>
                                 </div>
                             </div>
+                            <div className="container text-center d-flex align-items-center justify-content-center py-3">
+                                <Link to="/reservas" className="btn btn-light d-flex align-items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg>
+                                    <span>Reservar ahora</span>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Happy Hour */}
@@ -127,6 +148,14 @@ export default function Inicio() {
                                     <p className="small fw-bold text-white">TODOS LOS DÍAS</p>
                                 </div>
                             </div>
+                            <div className="container text-center d-flex align-items-center justify-content-center py-3">
+                                <Link to="/reservas" className="btn btn-light d-flex align-items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg>
+                                    <span>Reservar ahora</span>
+                                </Link>
+                            </div>
                         </div>
 
                         {/* Martes de Parrilla */}
@@ -150,6 +179,14 @@ export default function Inicio() {
                                     </ul>
                                     <p className="small fw-bold text-white">EN CORTES SELECCIONADOS</p>
                                 </div>
+                            </div>
+                            <div className="container text-center d-flex align-items-center justify-content-center py-3">
+                                <Link to="/reservas" className="btn btn-light d-flex align-items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg>
+                                    <span>Reservar ahora</span>
+                                </Link>
                             </div>
                         </div>
                     </div>
