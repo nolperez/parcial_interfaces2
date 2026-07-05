@@ -130,7 +130,7 @@ export default function MisReservas() {
                             <th>Fecha y Hora</th>
                             <th>Sucursal</th>
                             <th>Detalle</th>
-                            <th>Incitados</th>
+                            <th>Comensales</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
