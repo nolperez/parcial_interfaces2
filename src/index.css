@@ -75,3 +75,83 @@ code {
 .reservas-table tbody tr:nth-child(even) td {
   background-color: #9a9a9a;
 }
+
+/* Landing responsive */
+.landing-logo {
+  height: 56px;
+  width: auto;
+}
+
+.landing-logo-footer {
+  height: 56px;
+  width: auto;
+}
+
+.landing-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.landing-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-item-mobile {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .landing-logo {
+    height: 70px;
+  }
+
+  .landing-logo-footer {
+    height: 70px;
+  }
+
+  .nav-item-mobile {
+    width: auto;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .landing-navbar .navbar-collapse {
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.hero-section {
+  min-height: 500px;
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 420px;
+    background-attachment: scroll !important;
+  }
+
+  .reservas-table thead th,
+  .reservas-table tbody td {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+
+  .cliente-header-actions {
+    width: 100%;
+  }
+
+  .cliente-header-actions .btn {
+    flex: 1 1 auto;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .cliente-perfil-nombre {
+    font-size: 1.25rem !important;
+  }
+
+  .cliente-perfil-foto {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}

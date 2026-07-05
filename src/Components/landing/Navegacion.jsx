@@ -1,143 +1,81 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../logo.png";
+import React, { useState, useEffect } from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { NavLink, useLocation } from 'react-router-dom';
+import logo from '../../logo.png';
+
+const navBtnClass = (isActive, login = false) => {
+  if (login) {
+    return `btn w-100 ${isActive ? 'btn-danger' : 'btn-light'} rounded-3 px-3 px-lg-4 py-2 fw-bold`;
+  }
+  return `btn w-100 ${isActive ? 'btn-danger' : 'btn-outline-light'} rounded-3 px-3 px-lg-4 py-2 fw-bold`;
+};
 
 export default function Navegacion() {
+  const [expanded, setExpanded] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setExpanded(false);
+  }, [location.pathname]);
+
+  const closeNav = () => setExpanded(false);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black py-3">
-      <div className="container">
+    <Navbar
+      expand="lg"
+      variant="dark"
+      bg="black"
+      expanded={expanded}
+      onToggle={setExpanded}
+      className="landing-navbar py-2 py-lg-3 sticky-top"
+    >
+      <Container>
+        <Navbar.Brand as={NavLink} to="/" className="me-0 me-lg-4" onClick={closeNav}>
+          <img src={logo} alt="Logo Gourmet Fire Pit" className="landing-logo" />
+        </Navbar.Brand>
 
-        {/* Logo */}
-        <NavLink className="navbar-brand me-5" to="/">
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ height: "70px" }}
-          />
-        </NavLink>
+        <Navbar.Toggle aria-controls="landing-navbar-nav" aria-label="Abrir menú" />
 
-        {/* Botón responsive */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Menú */}
-        <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul className="navbar-nav gap-3">
-
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+        <Navbar.Collapse id="landing-navbar-nav">
+          <Nav className="mx-auto gap-2 py-3 py-lg-0 w-100 justify-content-center flex-wrap">
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/" end onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 INICIO
               </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/menu"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/menu" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 MENÚ
               </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/bebidas"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/bebidas" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 BEBIDAS
               </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/reservas"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/reservas" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 RESERVAS
               </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink
-                to="/nosotros"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/nosotros" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 NOSOTROS
               </NavLink>
-            </li>
-
-
-
-            <li className="nav-item">
-              <NavLink
-                to="/contacto"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-outline-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/contacto" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive)}>
                 CONTÁCTANOS
               </NavLink>
-            </li>
-
-
-
-            <li className="nav-item">
-              <NavLink
-                to="/login"
-                className={({ isActive }) =>
-                  `btn ${isActive
-                    ? "btn-danger"
-                    : "btn-light"
-                  } rounded-3 px-4 py-2 fw-bold`
-                }
-              >
+            </Nav.Item>
+            <Nav.Item className="nav-item-mobile">
+              <NavLink to="/login" onClick={closeNav} className={({ isActive }) => navBtnClass(isActive, true)}>
                 LOGIN
               </NavLink>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </nav>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }

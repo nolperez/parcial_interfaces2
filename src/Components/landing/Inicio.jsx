@@ -13,7 +13,6 @@ export default function Inicio() {
                     backgroundImage: `url(${carne})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    backgroundAttachment: 'fixed',
                     minHeight: '600px',
                     display: 'flex',
                     alignItems: 'center'
@@ -31,7 +30,7 @@ export default function Inicio() {
 
                 <div className="container position-relative z-2">
                     <div className="row align-items-center justify-content-start">
-                        <div className="col-md-6">
+                        <div className="col-md-6 col-12">
                             {/* // centrar la imagen */}
                             <img src={logo} alt="Gourmet Fire Pit" className="img-fluid d-block mx-auto justify-content-center mb-4" style={{ maxWidth: '500px' }} />
                             <p className="fs-7 text-center mb-1" style={{ color: '#d4580e' }}>SABOR QUE ENCIENDE MOMENTOS</p>

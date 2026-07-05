@@ -300,3 +300,104 @@
   background-color: #999;
   color: #111;
 }
+
+.admin-sidebar.offcanvas {
+  width: 260px;
+  background-color: #000;
+}
+
+.admin-menu-toggle {
+  padding: 0.35rem 0.55rem;
+}
+
+.admin-search-form .form-control {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .admin-navbar .form-control {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .page-header .btn-admin {
+    width: 100%;
+  }
+
+  .search-bar {
+    margin-bottom: 1rem !important;
+  }
+
+  .stat-card .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .chart-card {
+    min-height: 220px;
+  }
+
+  .bar-chart {
+    height: 140px;
+    padding: 0 0.25rem;
+  }
+
+  .bar-chart .bar-label {
+    font-size: 0.6rem;
+  }
+
+  .donut-chart {
+    width: 120px;
+    height: 120px;
+  }
+
+  .donut-chart::after {
+    width: 60px;
+    height: 60px;
+  }
+
+  .filter-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .filter-btn-group .btn {
+    flex: 1 1 calc(50% - 0.25rem);
+    font-size: 0.75rem;
+  }
+
+  .mesa-card {
+    min-height: 110px;
+    font-size: 0.9rem;
+  }
+
+  .admin-table thead th,
+  .admin-table tbody td {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .pagination-admin {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination-admin .page-link {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+  }
+}

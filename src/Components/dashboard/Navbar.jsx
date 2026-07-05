@@ -3,20 +3,31 @@ import { Navbar, Form } from 'react-bootstrap';
 
 const NavbarComponent = () => {
   return (
-    <Navbar className="admin-navbar px-4 py-2" variant="dark">
-      <div className="w-100 d-flex align-items-center justify-content-between">
-        <div className="flex-grow-1 d-flex justify-content-center px-4">
-          <Form className="w-100 d-flex justify-content-center">
-            <Form.Control
-              type="search"
-              placeholder="Buscar..."
-              className="rounded-pill"
-              aria-label="Buscar"
-            />
-          </Form>
-        </div>
+    <Navbar className="admin-navbar px-2 px-md-4 py-2" variant="dark">
+      <div className="w-100 d-flex align-items-center gap-2 gap-md-3">
+        <button
+          type="button"
+          className="btn btn-outline-light d-lg-none flex-shrink-0 admin-menu-toggle"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#adminSidebar"
+          aria-controls="adminSidebar"
+          aria-label="Abrir menú"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+          </svg>
+        </button>
 
-        <div className="d-flex align-items-center gap-3 flex-shrink-0">
+        <Form className="flex-grow-1 admin-search-form">
+          <Form.Control
+            type="search"
+            placeholder="Buscar..."
+            className="rounded-pill"
+            aria-label="Buscar"
+          />
+        </Form>
+
+        <div className="d-flex align-items-center gap-2 gap-md-3 flex-shrink-0">
           <button
             type="button"
             className="btn btn-link text-white p-0 text-decoration-none"
@@ -28,7 +39,7 @@ const NavbarComponent = () => {
           </button>
 
           <div
-            className="rounded-circle bg-secondary d-flex align-items-center justify-content-center"
+            className="rounded-circle bg-secondary d-flex align-items-center justify-content-center flex-shrink-0"
             style={{ width: 36, height: 36 }}
             aria-label="Perfil de usuario"
           >
