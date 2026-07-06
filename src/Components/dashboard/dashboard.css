@@ -17,20 +17,25 @@
 }
 
 .admin-sidebar .nav-link {
-  color: #fff;
+  color: #afafaf;
   padding: 0.65rem 1rem;
   border-radius: 0;
   font-size: 0.95rem;
+  margin-top: 0.25rem;
+  font-weight: 600;
 }
 
 .admin-sidebar .nav-link:hover {
   background-color: #333;
   color: #fff;
+  border-radius: 10px;
 }
 
 .admin-sidebar .nav-link.active {
-  background-color: #555;
+  background-color: #920101;
+  border-radius: 10px;
   color: #fff;
+  font-weight: 600;
 }
 
 .admin-navbar {
@@ -242,8 +247,10 @@
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
-  border: 2px solid #999;
+  border: 2px solid #99999900;
   min-height: 140px;
+  border-radius: 50px;
+  font-size: 40px;
 }
 
 .mesa-card.libre {
@@ -252,9 +259,8 @@
 }
 
 .mesa-card.ocupado {
-  background-color: #333;
+  background-color: #7e0404;
   color: #fff;
-  border-color: #222;
 }
 
 .btn-admin {
