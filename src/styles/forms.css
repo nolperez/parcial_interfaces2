@@ -1,0 +1,34 @@
+/* Placeholders visibles sobre inputs oscuros (#333 / bg-dark) */
+.form-control::placeholder,
+.form-select::placeholder,
+.admin-input::placeholder,
+textarea.form-control::placeholder,
+input.form-control::placeholder {
+  color: #a8a8a8 !important;
+  opacity: 1 !important;
+}
+
+.form-control::-webkit-input-placeholder,
+.admin-input::-webkit-input-placeholder {
+  color: #a8a8a8 !important;
+  opacity: 1 !important;
+}
+
+.form-control::-moz-placeholder,
+.admin-input::-moz-placeholder {
+  color: #a8a8a8 !important;
+  opacity: 1 !important;
+}
+
+.form-control:-ms-input-placeholder,
+.admin-input:-ms-input-placeholder {
+  color: #a8a8a8 !important;
+  opacity: 1 !important;
+}
+
+/* Date/time: el valor vacío no usa placeholder; suavizar el color del control */
+input[type='date'].form-control,
+input[type='time'].form-control,
+input[type='datetime-local'].form-control {
+  color-scheme: dark;
+}

@@ -51,7 +51,7 @@ export default function Nosotros() {
                     <div className="col-12 col-md-4">
                         <div className="bg-dark rounded-5 text-center p-4 h-100">
                             <div className="text-danger fs-1">
-                                <i className="bi bi-award-fill"></i>
+                                <i className="fa-solid fa-award" aria-hidden="true" />
                             </div>
 
                             <h5 className="text-white text-uppercase fw-bold mb-2">
@@ -67,7 +67,7 @@ export default function Nosotros() {
                     <div className="col-12 col-md-4">
                         <div className="bg-dark rounded-5 text-center p-4 h-100">
                             <div className="text-warning fs-1">
-                                <i className="bi bi-fire"></i>
+                                <i className="fa-solid fa-fire" aria-hidden="true" />
                             </div>
 
                             <h5 className="text-white text-uppercase fw-bold mb-2">
@@ -83,7 +83,7 @@ export default function Nosotros() {
                     <div className="col-12 col-md-4">
                         <div className="bg-dark rounded-5 text-center p-4 h-100">
                             <div className="text-warning fs-1">
-                                <i className="bi bi-stars"></i>
+                                <i className="fa-solid fa-star" aria-hidden="true" />
                             </div>
 
                             <h5 className="text-white text-uppercase fw-bold mb-2">

@@ -1,0 +1,51 @@
+/* SweetAlert2 — paleta Gourmet Fire Pit */
+.swal2-popup.swal-gourmet {
+  font-family: 'Poppins', sans-serif !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.swal2-popup.swal-gourmet .swal2-title,
+.swal-gourmet-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.swal2-popup.swal-gourmet .swal2-html-container,
+.swal-gourmet-text {
+  font-size: 0.95rem !important;
+  white-space: pre-line;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.swal2-popup.swal-gourmet .swal2-confirm,
+.swal-gourmet-confirm {
+  background-color: #d4580e !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 0.5rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem !important;
+  padding: 0.45rem 1rem !important;
+  box-shadow: none !important;
+}
+
+.swal2-popup.swal-gourmet .swal2-cancel,
+.swal-gourmet-cancel {
+  background-color: #5c2c2c !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 0.5rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 0.8rem !important;
+  padding: 0.45rem 1rem !important;
+  box-shadow: none !important;
+}
+
+.swal2-timer-progress-bar {
+  background: #d4580e !important;
+}

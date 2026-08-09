@@ -20,6 +20,7 @@ import Promos from './Components/dashboard/promos';
 import Mesas from './Components/dashboard/mesas';
 import Usuarios from './Components/dashboard/usuarios';
 import ReservasLanding from './Components/landing/Reservas';
+import { ProtectedRoute } from './Components/ProtectedRoute';
 
 const LandingLayout = ({ children }) => (
   <>
@@ -38,13 +39,42 @@ const App = () => {
         <Route path="/bebidas" element={<LandingLayout><Bebidas /></LandingLayout>} />
         <Route path="/nosotros" element={<LandingLayout><Nosotros /></LandingLayout>} />
         <Route path="/contacto" element={<LandingLayout><Contacto /></LandingLayout>} />
-        <Route path="/reservas" element={<LandingLayout><ReservasLanding /></LandingLayout>} />
         <Route path="/login" element={<LandingLayout><Login /></LandingLayout>} />
         <Route path="/registro" element={<LandingLayout><Registro /></LandingLayout>} />
-        <Route path="/cuenta" element={<MiCuenta />} />
-        <Route path="/mis-reservas" element={<MisReservas />} />
 
-        <Route path="/dashboard" element={<AdminLayout />}>
+        <Route
+          path="/reservas"
+          element={(
+            <ProtectedRoute roles={['cliente']}>
+              <LandingLayout><ReservasLanding /></LandingLayout>
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/cuenta"
+          element={(
+            <ProtectedRoute roles={['cliente']}>
+              <MiCuenta />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/mis-reservas"
+          element={(
+            <ProtectedRoute roles={['cliente']}>
+              <MisReservas />
+            </ProtectedRoute>
+          )}
+        />
+
+        <Route
+          path="/dashboard"
+          element={(
+            <ProtectedRoute roles={['staff']}>
+              <AdminLayout />
+            </ProtectedRoute>
+          )}
+        >
           <Route index element={<DashboardPage />} />
           <Route path="menus" element={<Menus />} />
           <Route path="bebidas" element={<BebidasAdmin />} />

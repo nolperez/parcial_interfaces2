@@ -1,51 +1,56 @@
 import React from 'react';
 import { Navbar, Form } from 'react-bootstrap';
+import { useAuth } from '../../context/AuthContext';
 
 const NavbarComponent = () => {
+  const { user } = useAuth();
+
   return (
-    <Navbar className="admin-navbar px-2 px-md-4 py-2" variant="dark">
+    <Navbar className="admin-navbar px-3 px-md-3 py-2 sticky-top">
       <div className="w-100 d-flex align-items-center gap-2 gap-md-3">
         <button
           type="button"
-          className="btn btn-outline-light d-lg-none flex-shrink-0 admin-menu-toggle"
+          className="btn btn-outline-light btn-sm d-lg-none flex-shrink-0 rounded-3"
           data-bs-toggle="offcanvas"
           data-bs-target="#adminSidebar"
           aria-controls="adminSidebar"
           aria-label="Abrir menú"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-          </svg>
+          <i className="fa-solid fa-bars" aria-hidden="true" />
         </button>
 
-        <Form className="flex-grow-1 admin-search-form">
+        <Form className="flex-grow-1">
           <Form.Control
             type="search"
-            placeholder="Buscar..."
-            className="rounded-pill"
+            size="sm"
+            placeholder="Buscar en el panel..."
+            className="admin-input rounded-pill px-3"
             aria-label="Buscar"
           />
         </Form>
 
-        <div className="d-flex align-items-center gap-2 gap-md-3 flex-shrink-0">
+        <div className="d-none d-sm-block text-end flex-shrink-0">
+          <div className="text-secondary text-uppercase" style={{ fontSize: '0.65rem' }}>Bienvenido</div>
+          <div className="fw-semibold text-white text-truncate" style={{ maxWidth: 140, fontSize: '0.85rem' }}>
+            {user?.name || 'Admin'}
+          </div>
+        </div>
+
+        <div className="d-flex align-items-center gap-2 flex-shrink-0">
           <button
             type="button"
-            className="btn btn-link text-white p-0 text-decoration-none"
+            className="btn btn-link admin-accent p-0 text-decoration-none"
             aria-label="Notificaciones"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6v1.086c.54.103 1.005.34 1.405.772.4.431.595.974.595 1.563V11a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1.778c0-.589.195-1.132.595-1.563A4.9 4.9 0 0 0 15 7.086V6a5 5 0 0 0-5-4.901" />
-            </svg>
+            <i className="fa-solid fa-bell" aria-hidden="true" />
           </button>
 
           <div
-            className="rounded-circle bg-secondary d-flex align-items-center justify-content-center flex-shrink-0"
-            style={{ width: 36, height: 36 }}
+            className="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 text-white"
+            style={{ width: 32, height: 32, backgroundColor: '#d4580e', fontSize: '0.8rem' }}
             aria-label="Perfil de usuario"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 16 16">
-              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-            </svg>
+            <i className="fa-solid fa-user" aria-hidden="true" />
           </div>
         </div>
       </div>
