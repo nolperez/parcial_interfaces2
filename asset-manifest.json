@@ -1,19 +1,25 @@
 {
   "files": {
-    "main.css": "/parcial_interfaces2/static/css/main.b94ecd00.css",
-    "main.js": "/parcial_interfaces2/static/js/main.cc7001ca.js",
+    "main.css": "/parcial_interfaces2/static/css/main.ec993c23.css",
+    "main.js": "/parcial_interfaces2/static/js/main.98fe5a5d.js",
     "static/js/453.03aabd61.chunk.js": "/parcial_interfaces2/static/js/453.03aabd61.chunk.js",
     "static/media/carne.png": "/parcial_interfaces2/static/media/carne.ab167d3cfbda10bd2fb1.png",
-    "static/media/bootstrap-icons.woff?": "/parcial_interfaces2/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
-    "static/media/bootstrap-icons.woff2?": "/parcial_interfaces2/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
+    "static/media/fa-solid-900.ttf": "/parcial_interfaces2/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/parcial_interfaces2/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/parcial_interfaces2/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/parcial_interfaces2/static/media/fa-brands-400.c210719e60948b211a12.woff2",
     "static/media/logo.png": "/parcial_interfaces2/static/media/logo.38a7d346d7a22addd5e0.png",
+    "static/media/fa-regular-400.ttf": "/parcial_interfaces2/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/fa-regular-400.woff2": "/parcial_interfaces2/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/parcial_interfaces2/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/parcial_interfaces2/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/parcial_interfaces2/index.html",
-    "main.b94ecd00.css.map": "/parcial_interfaces2/static/css/main.b94ecd00.css.map",
-    "main.cc7001ca.js.map": "/parcial_interfaces2/static/js/main.cc7001ca.js.map",
+    "main.ec993c23.css.map": "/parcial_interfaces2/static/css/main.ec993c23.css.map",
+    "main.98fe5a5d.js.map": "/parcial_interfaces2/static/js/main.98fe5a5d.js.map",
     "453.03aabd61.chunk.js.map": "/parcial_interfaces2/static/js/453.03aabd61.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b94ecd00.css",
-    "static/js/main.cc7001ca.js"
+    "static/css/main.ec993c23.css",
+    "static/js/main.98fe5a5d.js"
   ]
 }
