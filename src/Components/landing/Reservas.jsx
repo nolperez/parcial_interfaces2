@@ -315,6 +315,11 @@ export default function Reservas() {
             return;
         }
 
+        if (!form.mesa_id) {
+            swalWarning('Selecciona una mesa disponible antes de confirmar.', 'Mesa requerida');
+            return;
+        }
+
         setLoading(true);
         try {
             await api.post('/reservas', {
