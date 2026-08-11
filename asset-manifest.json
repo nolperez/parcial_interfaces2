@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/parcial_interfaces2/static/css/main.ec993c23.css",
-    "main.js": "/parcial_interfaces2/static/js/main.b06a1438.js",
+    "main.js": "/parcial_interfaces2/static/js/main.ea4808a7.js",
     "static/js/453.03aabd61.chunk.js": "/parcial_interfaces2/static/js/453.03aabd61.chunk.js",
     "static/media/carne.png": "/parcial_interfaces2/static/media/carne.ab167d3cfbda10bd2fb1.png",
     "static/media/fa-solid-900.ttf": "/parcial_interfaces2/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.woff2": "/parcial_interfaces2/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/parcial_interfaces2/index.html",
     "main.ec993c23.css.map": "/parcial_interfaces2/static/css/main.ec993c23.css.map",
-    "main.b06a1438.js.map": "/parcial_interfaces2/static/js/main.b06a1438.js.map",
+    "main.ea4808a7.js.map": "/parcial_interfaces2/static/js/main.ea4808a7.js.map",
     "453.03aabd61.chunk.js.map": "/parcial_interfaces2/static/js/453.03aabd61.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec993c23.css",
-    "static/js/main.b06a1438.js"
+    "static/js/main.ea4808a7.js"
   ]
 }
