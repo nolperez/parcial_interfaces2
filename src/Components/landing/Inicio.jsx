@@ -46,65 +46,65 @@ export default function Inicio() {
     return (
         <div className="bg-black text-white">
             <section
-                className="min-vh-50 py-5 position-relative d-flex align-items-center"
-                style={{
-                    backgroundImage: `url(${carne})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    minHeight: 600,
-                }}
+                className="home-hero"
+                style={{ backgroundImage: `url(${carne})` }}
             >
-                <div
-                    className="position-absolute w-100 h-100"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', top: 0, left: 0 }}
-                />
+                <div className="home-hero__overlay" aria-hidden="true" />
 
-                <div className="container position-relative z-2">
-                    <div className="row align-items-center justify-content-start">
-                        <div className="col-md-6 col-12">
-                            <img src={logo} alt="Gourmet Fire Pit" className="img-fluid d-block mx-auto justify-content-center mb-4" style={{ maxWidth: '500px' }} />
-                            <p className="fs-7 text-center mb-1" style={{ color: '#d4580e' }}>SABOR QUE ENCIENDE MOMENTOS</p>
-                            <p className="mb-3 text-center text-white" style={{ fontSize: '0.75rem' }}>CARNES PREMIUM - PARRILLA AL FUEGO - EXPERIENCIA UNICA</p>
-                            <div className="container">
-                                <div className="row row-cols-1 row-cols-md-4 text-center">
-                                    <div className="col mb-4">
-                                        <div className="p-3">
-                                            <div className="fs-3 mb-2" style={{ color: '#d4580e' }}>
+                <div className="container home-hero__content">
+                    <div className="row align-items-center justify-content-center justify-content-md-start">
+                        <div className="col-12 col-md-8 col-lg-6">
+                            <img
+                                src={logo}
+                                alt="Gourmet Fire Pit"
+                                className="home-hero__logo mb-3 mb-md-4"
+                            />
+                            <p className="home-hero__tagline text-uppercase fw-semibold">
+                                Sabor que enciende momentos
+                            </p>
+                            <p className="home-hero__sub text-uppercase">
+                                Carnes premium · Parrilla al fuego · Experiencia única
+                            </p>
+                            <div className="home-hero__features">
+                                <div className="row row-cols-2 row-cols-md-4 text-center g-2 g-md-3">
+                                    <div className="col">
+                                        <div className="p-2 p-md-3">
+                                            <div className="fs-4 fs-md-3 mb-2" style={{ color: '#d4580e' }}>
                                                 <i className="fa-solid fa-fire" aria-hidden="true" />
                                             </div>
-                                            <h6 className="fw-bold text-uppercase" style={{ fontSize: '0.85rem' }}>Carnes Premium</h6>
-                                            <p className="small text-muted" style={{ fontSize: '0.7rem' }}>
+                                            <h6 className="fw-bold text-uppercase mb-1">Carnes Premium</h6>
+                                            <p className="small text-secondary mb-0">
                                                 {menus.filter((m) => m.categoria === 'carnes').length || 'Seleccionadas'}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="col mb-4">
-                                        <div className="p-3">
-                                            <div className="fs-3 mb-2" style={{ color: '#d4580e' }}>
+                                    <div className="col">
+                                        <div className="p-2 p-md-3">
+                                            <div className="fs-4 fs-md-3 mb-2" style={{ color: '#d4580e' }}>
                                                 <i className="fa-solid fa-drumstick-bite" aria-hidden="true" />
                                             </div>
-                                            <h6 className="fw-bold text-uppercase" style={{ fontSize: '0.85rem' }}>Parrilla al Fuego</h6>
-                                            <p className="small text-muted" style={{ fontSize: '0.7rem' }}>Cocción en vivo</p>
+                                            <h6 className="fw-bold text-uppercase mb-1">Parrilla al Fuego</h6>
+                                            <p className="small text-secondary mb-0">Cocción en vivo</p>
                                         </div>
                                     </div>
-                                    <div className="col mb-4">
-                                        <div className="p-3">
-                                            <div className="fs-3 mb-2" style={{ color: '#d4580e' }}>
+                                    <div className="col">
+                                        <div className="p-2 p-md-3">
+                                            <div className="fs-4 fs-md-3 mb-2" style={{ color: '#d4580e' }}>
                                                 <i className="fa-solid fa-wine-glass" aria-hidden="true" />
                                             </div>
-                                            <h6 className="fw-bold text-uppercase" style={{ fontSize: '0.85rem' }}>Bebidas Seleccionadas</h6>
-                                            <p className="small text-muted" style={{ fontSize: '0.7rem' }}>
+                                            <h6 className="fw-bold text-uppercase mb-1">Bebidas</h6>
+                                            <p className="small text-secondary mb-0">
                                                 {bebidas.length ? `${bebidas.length} opciones` : 'Premium'}
                                             </p>
                                         </div>
                                     </div>
-                                    <div className="col mb-4">
-                                        <div className="p-3">
-                                            <div className="fs-3 mb-2" style={{ color: '#d4580e' }}>
+                                    <div className="col">
+                                        <div className="p-2 p-md-3">
+                                            <div className="fs-4 fs-md-3 mb-2" style={{ color: '#d4580e' }}>
                                                 <i className="fa-solid fa-certificate" aria-hidden="true" />
                                             </div>
-                                            <h6 className="fw-bold text-uppercase" style={{ fontSize: '0.85rem' }}>Experiencia Garantizada</h6>
-                                            <p className="small text-muted" style={{ fontSize: '0.7rem' }}>A la Parrilla</p>
+                                            <h6 className="fw-bold text-uppercase mb-1">Experiencia</h6>
+                                            <p className="small text-secondary mb-0">A la parrilla</p>
                                         </div>
                                     </div>
                                 </div>
@@ -114,7 +114,7 @@ export default function Inicio() {
                 </div>
             </section>
 
-            <section className="py-3" style={{ backgroundColor: '#4b0505' }}>
+            <section className="py-3 section-band" style={{ backgroundColor: '#4b0505' }}>
                 <div className="container">
                     <div className="row align-items-center justify-content-center text-center">
                         <h2 className="fw-bold text-white mb-0">
@@ -147,8 +147,7 @@ export default function Inicio() {
                                         <img
                                             src={promo.imagen || fallbackImages[index % fallbackImages.length]}
                                             alt={stripEmoji(promo.nombre)}
-                                            className="card-img-top"
-                                            style={{ height: 100, objectFit: 'cover' }}
+                                            className="card-img-top product-card-img"
                                         />
                                         <div className="card-body text-center d-flex flex-column flex-grow-1 p-2 p-md-3">
                                             <h6 className="card-title fw-bold text-uppercase text-white mb-1" style={{ fontSize: '0.85rem' }}>
@@ -190,7 +189,7 @@ export default function Inicio() {
                 </div>
             </section>
 
-            <section className="py-3" style={{ backgroundColor: '#4b0505' }}>
+            <section className="py-3 section-band" style={{ backgroundColor: '#4b0505' }}>
                 <div className="container text-center">
                     <h2 className="fw-bold text-white mb-0 h4">
                         <i className="fa-solid fa-utensils me-2" aria-hidden="true" />
@@ -208,7 +207,7 @@ export default function Inicio() {
                             <div className="col" key={item.id}>
                                 <div className="card h-100 border-0 bg-dark text-white rounded-3 overflow-hidden">
                                     {item.imagen && (
-                                        <img src={item.imagen} alt={item.nombre} className="card-img-top" style={{ height: 100, objectFit: 'cover' }} />
+                                        <img src={item.imagen} alt={item.nombre} className="card-img-top product-card-img" />
                                     )}
                                     <div className="card-body p-2 p-md-3">
                                         <h6 className="text-uppercase fw-bold mb-1" style={{ color: '#d4580e', fontSize: '0.8rem' }}>{stripEmoji(item.nombre)}</h6>
@@ -237,7 +236,7 @@ export default function Inicio() {
                 </div>
             </section>
 
-            <section className="py-3" style={{ backgroundColor: '#4b0505' }}>
+            <section className="py-3 section-band" style={{ backgroundColor: '#4b0505' }}>
                 <div className="container text-center">
                     <h2 className="fw-bold text-white mb-0 h4">
                         <i className="fa-solid fa-wine-glass me-2" aria-hidden="true" />
@@ -253,7 +252,7 @@ export default function Inicio() {
                             <div className="col" key={item.id}>
                                 <div className="card h-100 border-0 bg-dark text-white rounded-3 overflow-hidden">
                                     {item.imagen && (
-                                        <img src={item.imagen} alt={item.nombre} className="card-img-top" style={{ height: 100, objectFit: 'cover' }} />
+                                        <img src={item.imagen} alt={item.nombre} className="card-img-top product-card-img" />
                                     )}
                                     <div className="card-body p-2 p-md-3">
                                         <h6 className="text-uppercase fw-bold mb-1" style={{ color: '#d4580e', fontSize: '0.8rem' }}>{stripEmoji(item.nombre)}</h6>

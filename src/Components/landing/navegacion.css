@@ -5,9 +5,22 @@
 }
 
 .nav-site-logo {
-  height: 48px;
+  height: 40px;
   width: auto;
   display: block;
+}
+
+@media (max-width: 575.98px) {
+  .nav-site-link {
+    font-size: 0.75rem;
+    padding: 0.65rem 0.15rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .nav-site-logo {
+    height: 48px;
+  }
 }
 
 .nav-site-menu {

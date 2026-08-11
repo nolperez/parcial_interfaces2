@@ -259,13 +259,15 @@ export default function MisReservas() {
             <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-4">
                 <div>
                     <p className="text-uppercase small text-secondary mb-1">Cliente</p>
-                    <h1 className="text-uppercase fw-bold mb-1 h3">Mis reservas</h1>
+                    <h1 className="text-uppercase fw-bold mb-1 landing-page-title">Mis reservas</h1>
                     <p className="text-secondary mb-0">
                         Hola {user?.name || 'cliente'}, aquí ves tus reservaciones activas e historial.
                     </p>
                 </div>
-                <div className="d-flex flex-column flex-sm-row gap-2">
-
+                <div className="d-flex flex-column flex-sm-row gap-2 mis-reservas-actions">
+                    <Link to="/cuenta" className="btn btn-outline-light rounded-3 px-4 py-2 fw-bold text-uppercase">
+                        Mi cuenta
+                    </Link>
                     <Link to="/reservas" className="btn border-0 rounded-3 px-4 py-2 fw-bold text-uppercase text-white" style={{ backgroundColor: '#d4580e' }}>
                         Nueva reserva
                     </Link>

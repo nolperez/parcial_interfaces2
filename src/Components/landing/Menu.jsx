@@ -26,12 +26,12 @@ export default function Menu() {
     return (
         <div className="bg-black text-white min-vh-100 py-4">
             <div className="container">
-                <div className="text-center mb-3">
+                <div className="text-center mb-3 px-2">
                     <p className="text-uppercase fw-bold mb-1" style={{ color: '#d4580e' }}>Carta</p>
-                    <h2 className="text-uppercase fw-bold h3">Menú Gourmet Fire Pit</h2>
+                    <h2 className="text-uppercase fw-bold landing-page-title">Menú Gourmet Fire Pit</h2>
                 </div>
 
-                <div className="d-flex flex-wrap gap-2 justify-content-center mb-3">
+                <div className="d-flex flex-wrap gap-2 justify-content-center mb-3 filter-chip-row">
                     {categorias.map((c) => (
                         <button
                             key={c}
@@ -44,15 +44,15 @@ export default function Menu() {
                     ))}
                 </div>
 
-                <div className="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3">
+                <div className="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-2 g-md-3">
                     {filtrados.map((item) => {
                         const agotado = item.agotado || Number(item.stock) <= 0 || !item.disponible;
                         const partes = parseComposicion(item.composicion).slice(0, 4);
                         return (
                             <div className="col" key={item.id}>
-                                <div className="card h-100 border-0 bg-dark text-white overflow-hidden rounded-3">
+                                <div className="card product-card h-100 border-0 bg-dark text-white overflow-hidden rounded-3">
                                     {item.imagen && (
-                                        <img src={item.imagen} alt={item.nombre} className="card-img-top" style={{ height: 100, objectFit: 'cover' }} />
+                                        <img src={item.imagen} alt={item.nombre} className="card-img-top product-card-img" />
                                     )}
                                     <div className="card-body d-flex flex-column p-2 p-md-3">
                                         <div className="d-flex justify-content-between align-items-start gap-1 mb-1">

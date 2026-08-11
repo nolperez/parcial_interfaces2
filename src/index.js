@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import './utils/swal.css';
 import './styles/forms.css';
+import './styles/landing-responsive.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './context/AuthContext';

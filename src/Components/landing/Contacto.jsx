@@ -40,8 +40,7 @@ export default function Contacto() {
                 <img
                     src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&h=400&fit=crop"
                     alt="Contacto Gourmet Fire Pit"
-                    className="img-fluid w-100"
-                    style={{ height: 260, objectFit: 'cover' }}
+                    className="page-banner"
                 />
             </div>
 
@@ -51,7 +50,7 @@ export default function Contacto() {
                         <h2 className="text-uppercase fw-bold mb-2">Contáctanos</h2>
                         <p className="text-secondary mb-4">Escríbenos para reservas especiales, eventos o consultas.</p>
 
-                        <div className="rounded-4 p-4" style={{ backgroundColor: '#2A2A2A' }}>
+                        <div className="rounded-4 p-4 contacto-form-panel" style={{ backgroundColor: '#2A2A2A' }}>
                             <form onSubmit={handleSubmit} noValidate>
                                 <div className="mb-3">
                                     <label className="form-label text-secondary" htmlFor="nombre">Nombre</label>

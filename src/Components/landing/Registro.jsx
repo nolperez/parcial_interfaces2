@@ -47,12 +47,12 @@ export default function Registro() {
     const inputStyle = { backgroundColor: '#666666' };
 
     return (
-        <div className="bg-black text-white min-vh-100 d-flex align-items-center justify-content-center py-5">
+        <div className="bg-black text-white min-vh-100 d-flex align-items-center justify-content-center py-4 py-md-5 px-2">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-11 col-lg-10 col-xl-8">
-                        <div className="rounded-4 p-4 p-md-5" style={{ backgroundColor: '#2b2b2b' }}>
-                            <h2 className="text-center text-uppercase fw-bold mb-4 text-secondary">
+                    <div className="col-12 col-sm-11 col-lg-10 col-xl-8">
+                        <div className="rounded-4 p-3 p-md-5 auth-panel" style={{ backgroundColor: '#2b2b2b' }}>
+                            <h2 className="text-center text-uppercase fw-bold mb-4 text-secondary landing-page-title">
                                 Registro
                             </h2>
 

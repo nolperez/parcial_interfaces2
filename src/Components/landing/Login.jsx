@@ -49,8 +49,7 @@ export default function Login() {
                     <img
                         src="https://thumbs.dreamstime.com/b/carnes-la-parrilla-en-barbacoa-vista-panor%C3%A1mica-de-varios-cortes-carne-una-sobre-llamas-vibrantes-parece-estar-bien-marinada-y-385351371.jpg"
                         alt="Parrilla Gourmet Fire Pit"
-                        className="img-fluid w-100"
-                        style={{ display: 'block', height: '260px', objectFit: 'cover' }}
+                        className="page-banner"
                     />
                 </div>
             </div>
@@ -66,7 +65,7 @@ export default function Login() {
                             </p>
                         )}
 
-                        <div className="rounded-4 p-4" style={{ backgroundColor: '#2A2A2A' }}>
+                        <div className="rounded-4 p-4 auth-panel" style={{ backgroundColor: '#2A2A2A' }}>
                             <div className="d-flex mb-4 rounded-3 overflow-hidden" style={{ backgroundColor: '#1a1a1a' }}>
                                 <button
                                     type="button"

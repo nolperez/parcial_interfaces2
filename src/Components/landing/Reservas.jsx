@@ -358,8 +358,7 @@ export default function Reservas() {
                 <img
                     src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&h=400&fit=crop"
                     alt="Reservas Gourmet Fire Pit"
-                    className="img-fluid w-100"
-                    style={{ height: 260, objectFit: 'cover' }}
+                    className="page-banner"
                 />
             </div>
 
@@ -372,7 +371,7 @@ export default function Reservas() {
 
                 <div className="row g-4">
                     <div className="col-12 col-lg-8">
-                        <form onSubmit={handleSubmit} noValidate className="rounded-4 p-3 p-md-4" style={{ backgroundColor: '#2A2A2A' }} autoComplete="off">
+                        <form onSubmit={handleSubmit} noValidate className="rounded-4 p-3 p-md-4 reserva-form-panel" style={{ backgroundColor: '#2A2A2A' }} autoComplete="off">
                             <h5 className="text-uppercase fw-bold mb-3" style={{ color: '#d4580e' }}>
                                 <i className="fa-solid fa-id-card me-2" aria-hidden="true" />
                                 Datos del cliente
