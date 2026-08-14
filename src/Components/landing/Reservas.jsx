@@ -28,7 +28,6 @@ const blankForm = () => ({
     fecha: '',
     hora: '',
     mesa_id: '',
-    asientos: '',
     comensales: '',
     metodo_pago_id: '',
     descripcion: '',
@@ -86,7 +85,6 @@ export default function Reservas() {
                     metodo_pago_id: prev.metodo_pago_id,
                     descripcion: prev.descripcion,
                     comensales: prev.comensales,
-                    asientos: prev.asientos,
                 };
             }
             return {
@@ -150,45 +148,66 @@ export default function Reservas() {
 
     useEffect(() => {
         if (!form.fecha || !form.hora || !esHorarioValido(form.hora)) {
-            api.get('/mesas').then(({ data }) => {
-                setMesas((data || []).map((m) => ({
-                    ...m,
-                    reservada: false,
-                    seleccionable: !(Number(m.estadouso) === 3 || m.en_mantenimiento),
-                    estado_reserva: (Number(m.estadouso) === 3 || m.en_mantenimiento) ? 'mantenimiento' : 'disponible',
-                })));
-            }).catch(() => {});
+            setMesas([]);
             return;
         }
+        let cancelled = false;
         api.get('/mesas-disponibles', {
             params: {
                 fecha_hora: `${form.fecha} ${form.hora}`,
                 comensales: form.comensales || 1,
             },
         }).then(({ data }) => {
+            if (cancelled) return;
             const list = data || [];
             setMesas(list);
             setForm((prev) => {
                 if (!prev.mesa_id) return prev;
                 const selected = list.find((m) => String(m.idmesa) === String(prev.mesa_id));
-                if (!selected || selected.reservada || selected.en_mantenimiento || selected.seleccionable === false) {
+                if (
+                    !selected
+                    || selected.reservada
+                    || selected.en_mantenimiento
+                    || Number(selected.estadouso) === 3
+                    || selected.seleccionable === false
+                ) {
                     return { ...prev, mesa_id: '' };
                 }
                 return prev;
             });
-        }).catch(() => setMesas([]));
+        }).catch(() => {
+            if (!cancelled) setMesas([]);
+        });
+        return () => { cancelled = true; };
     }, [form.fecha, form.hora, form.comensales]);
 
     const onSelectMesa = (e) => {
         const id = e.target.value;
+        if (!form.fecha || !form.hora) {
+            swalWarning('Primero selecciona la fecha y la hora.', 'Fecha y hora requeridas');
+            setForm((prev) => ({ ...prev, mesa_id: '' }));
+            return;
+        }
         const mesa = mesas.find((m) => String(m.idmesa) === String(id));
-        if (mesa?.reservada) {
+        if (!mesa) {
+            setForm((prev) => ({ ...prev, mesa_id: '' }));
+            return;
+        }
+        if (mesa.reservada || mesa.estado_reserva === 'reservada' || mesa.seleccionable === false) {
             swalWarning('Mesa reservada en ese horario. Elige otra mesa u otro horario.', 'Mesa reservada');
             setForm((prev) => ({ ...prev, mesa_id: '' }));
             return;
         }
-        if (mesa?.en_mantenimiento || Number(mesa?.estadouso) === 3) {
+        if (mesa.en_mantenimiento || Number(mesa.estadouso) === 3 || mesa.estado_reserva === 'mantenimiento') {
             swalWarning('Esta mesa está en mantenimiento y no se puede reservar.', 'Mesa no disponible');
+            setForm((prev) => ({ ...prev, mesa_id: '' }));
+            return;
+        }
+        if (form.comensales && Number(form.comensales) > Number(mesa.cantidadsillas)) {
+            swalWarning(
+                `La mesa solo admite ${mesa.cantidadsillas} personas.`,
+                'Capacidad insuficiente'
+            );
             setForm((prev) => ({ ...prev, mesa_id: '' }));
             return;
         }
@@ -306,17 +325,23 @@ export default function Reservas() {
             }
         }
         const mesaSel = mesas.find((m) => String(m.idmesa) === String(form.mesa_id));
-        if (mesaSel && (Number(mesaSel.estadouso) === 3 || mesaSel.en_mantenimiento)) {
+        if (!form.mesa_id || !mesaSel) {
+            swalWarning('Selecciona una mesa disponible para esa fecha y hora.', 'Mesa requerida');
+            return;
+        }
+        if (Number(mesaSel.estadouso) === 3 || mesaSel.en_mantenimiento || mesaSel.estado_reserva === 'mantenimiento') {
             swalWarning('Esta mesa está en mantenimiento y no se puede reservar.', 'Mesa no disponible');
             return;
         }
-        if (mesaSel?.reservada || mesaSel?.seleccionable === false) {
+        if (mesaSel.reservada || mesaSel.seleccionable === false || mesaSel.estado_reserva === 'reservada') {
             swalWarning('Mesa reservada en ese horario. Elige otra mesa u otro horario.', 'Mesa reservada');
             return;
         }
-
-        if (!form.mesa_id) {
-            swalWarning('Selecciona una mesa disponible antes de confirmar.', 'Mesa requerida');
+        if (Number(form.comensales) > Number(mesaSel.cantidadsillas)) {
+            swalWarning(
+                `La mesa solo tiene ${mesaSel.cantidadsillas} asientos. Reduce el número de comensales.`,
+                'Capacidad insuficiente'
+            );
             return;
         }
 
@@ -326,7 +351,7 @@ export default function Reservas() {
                 ...form,
                 fecha_hora: `${form.fecha} ${form.hora}`,
                 comensales: Number(form.comensales),
-                asientos: Number(form.asientos || form.comensales),
+                asientos: Number(form.comensales),
                 mesa_id: Number(form.mesa_id),
                 metodo_pago_id: form.metodo_pago_id ? Number(form.metodo_pago_id) : null,
                 items: form.items.map((it) => ({
@@ -419,7 +444,7 @@ export default function Reservas() {
 
                             <h5 className="text-uppercase fw-bold mb-3" style={{ color: '#d4580e' }}>
                                 <i className="fa-solid fa-calendar-days me-2" aria-hidden="true" />
-                                Fecha, mesa y asientos
+                                Fecha, hora y mesa
                             </h5>
                             <div className="row g-3 mb-4">
                                 <div className="col-md-4">
@@ -462,37 +487,45 @@ export default function Reservas() {
                                     <label className="form-label text-secondary">Comensales *</label>
                                     <input type="number" min="1" max="50" className={inputClass} value={form.comensales} onChange={set('comensales')} placeholder="Ej: 2" required />
                                 </div>
-                                <div className="col-md-4">
-                                    <label className="form-label text-secondary">Asientos *</label>
-                                    <input type="number" min="1" max="50" className={inputClass} value={form.asientos} onChange={set('asientos')} placeholder="Ej: 2" required />
-                                </div>
-                                <div className="col-md-4">
+                                <div className="col-md-6">
                                     <label className="form-label text-secondary">Mesa disponible *</label>
-                                    <select className={selectClass} value={form.mesa_id} onChange={onSelectMesa} required>
-                                        <option value="">Selecciona mesa</option>
+                                    <select
+                                        className={selectClass}
+                                        value={form.mesa_id}
+                                        onChange={onSelectMesa}
+                                        required
+                                        disabled={!form.fecha || !form.hora || !esHorarioValido(form.hora)}
+                                    >
+                                        <option value="">
+                                            {!form.fecha || !form.hora
+                                                ? 'Selecciona fecha y hora primero'
+                                                : 'Selecciona mesa'}
+                                        </option>
                                         {mesas.map((m) => {
-                                            const mant = Number(m.estadouso) === 3 || m.en_mantenimiento;
-                                            const reservada = !!m.reservada;
-                                            const disabled = mant || reservada || m.seleccionable === false;
+                                            const mant = Number(m.estadouso) === 3 || m.en_mantenimiento || m.estado_reserva === 'mantenimiento';
+                                            const reservada = !!m.reservada || m.estado_reserva === 'reservada';
+                                            const capacidadInsuficiente = form.comensales && Number(form.comensales) > Number(m.cantidadsillas);
+                                            const disabled = mant || reservada || capacidadInsuficiente || m.seleccionable === false;
                                             let extra = '';
                                             if (mant) extra = ' — EN MANTENIMIENTO';
                                             else if (reservada) extra = ' — MESA RESERVADA';
+                                            else if (capacidadInsuficiente) extra = ' — CAPACIDAD INSUFICIENTE';
                                             return (
                                                 <option key={m.idmesa} value={m.idmesa} disabled={disabled}>
-                                                    {m.nombremessa} — {m.ubicacionmesa} ({m.cantidadsillas} asientos){extra}
+                                                    {m.nombremessa} — {m.ubicacionmesa} ({m.cantidadsillas} personas){extra}
                                                 </option>
                                             );
                                         })}
                                     </select>
                                     <div className="form-text text-secondary">
                                         {form.fecha && form.hora
-                                            ? `Disponibilidad para ${form.fecha} ${formatHora12(form.hora)}`
+                                            ? `Disponibilidad para ${form.fecha} ${formatHora12(form.hora)}. Mesas ocupadas o en mantenimiento no se pueden elegir.`
                                             : form.fecha
                                                 ? 'Ahora selecciona la hora para ver disponibilidad.'
                                                 : 'Primero selecciona la fecha y luego la hora.'}
                                     </div>
                                 </div>
-                                <div className="col-md-4">
+                                <div className="col-md-6">
                                     <label className="form-label text-secondary">Método de pago *</label>
                                     <select className={selectClass} value={form.metodo_pago_id} onChange={set('metodo_pago_id')} required>
                                         <option value="">Seleccionar</option>
@@ -613,7 +646,8 @@ export default function Reservas() {
                             </h5>
                             <ul className="text-secondary small ps-3 mb-0">
                                 <li className="mb-2">Horario de atención: 08:00 AM a 10:00 PM.</li>
-                                <li className="mb-2">Si la mesa ya tiene reserva en ese horario, verás &quot;Mesa reservada&quot;.</li>
+                                <li className="mb-2">Primero elige fecha y hora; luego verás qué mesas están disponibles.</li>
+                                <li className="mb-2">Si la mesa ya tiene reserva u ocupación en ese horario, verás &quot;Mesa reservada&quot; y no podrás seleccionarla.</li>
                                 <li className="mb-2">Las mesas en mantenimiento no se pueden seleccionar.</li>
                                 <li>Puedes revisar tus reservas en Mi cuenta.</li>
                             </ul>
